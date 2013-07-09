@@ -2,5 +2,19 @@ var greeting = function (name) {
     console.log("Great to see you," + " " + name);
 };
 
-// On line 11, call the greeting function!
 greeting("Albert");
+
+// Write your foodDemand function below.
+// Last hint: In your reusable block of code, end each line
+// with a semicolon (;)
+var foodDemand = function (food){
+    console.log("I want to eat" + " " + food);
+};
+foodDemand("fried eggs");
+
+// Parameter is a number, and we do math with that parameter
+var timesTwo = function(number) {
+    return number * 2;
+};
+var newNumber = timesTwo(4);
+console.log(newNumber);
