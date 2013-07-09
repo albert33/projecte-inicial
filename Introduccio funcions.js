@@ -30,3 +30,19 @@ if (quarter(12) % 3 === 0 ) {
 } else {
   console.log("The statement is false");
 }
+
+// Write your function starting on line 3
+
+var perimeterBox = function (length,width){
+    return length + length + width + width;
+};
+
+perimeterBox(4,2);
+
+//
+
+var nameString = function (name) {
+	return "Hi, I am" + " " + name;
+};
+console.log(nameString("Albert"));
+

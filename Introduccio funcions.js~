@@ -18,3 +18,24 @@ var timesTwo = function(number) {
 };
 var newNumber = timesTwo(4);
 console.log(newNumber);
+
+// Define quarter here.
+var quarter = function (number){
+    return number/4;
+};
+
+
+if (quarter(12) % 3 === 0 ) {
+  console.log("The statement is true");
+} else {
+  console.log("The statement is false");
+}
+
+// Write your function starting on line 3
+
+var perimeterBox = function (length,width){
+    return length + length + width + width;
+};
+
+perimeterBox(4,2);
+
