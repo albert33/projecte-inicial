@@ -4,7 +4,7 @@
  */
 
 var max = function (n1,n2){
-	if (n1 > n2){
+	if (n1 >= n2){
 		return n1;
 	} else {
 		return n2;
@@ -29,6 +29,7 @@ var maxOfThree = function(n1,n2,n3){
 };
 console.log("El numero mes gran es: " + maxOfThree(10,5,17));
 
+
 /*
  * 3. Escriu una funció isVowel() que accepti un caracter (una frase de longitud 1) i
  * retorni el booleà 'true' si és una vocal, 'false' si és una consonant.
@@ -45,24 +46,20 @@ console.log(isVowel("a"));
  * "Un bon dia" esdevindria "Upun bopon dipiapa".
  */
 
-// Aquest exercici no funciona correctament
-// No se que modificar per a que funcioni
+
 var fOriginal = "Un bon dia";
 var vocals = ["a","e","i","o","u"];
 
 var translate = function (fOriginal){
 	var fModif = fOriginal.split("");
-
-		for (var i=0; i<fOriginal.length; i++){
+	var cont =0;
+	
+		for (var i=0; i<fModif.length; i++){
 			for (var j=0; j<vocals.length; j++){
-				
 				if (fModif[i].toLowerCase() === vocals[j]){
 					fModif.splice(i+1,0,"p"+vocals[j]);
-					
 				}
-
 			}
-			
 		}
 	return fModif.join("");
 };
@@ -157,6 +154,28 @@ console.log(filterLongWords(array,len));
  * un enter que és el nombre de vegades que apareix aquesta lletra a la cadena d'entrada.
  * Si una lletra no apareix no cal que estigui definida a l'objecte.
  */
+
+
+var cadena = "Hola que tal";
+var charFreq = function (cadena){
+	var cad2 = cadena;
+	var cont=0;
+	//Contador de les vegades que apareix una lletra
+	var cont2=0;
+	//Creem l'objecte
+	var llistat = {};
+	while (cont<cad2.length){
+		var c = cad2[cont];
+		cont2=cad2.split(c).length -1;
+		if (c !== " "){
+			console.log("Lletra: "+c+" - "+cont2);
+			//Aqui no se si creo bé l'objecte
+			llistat.c = cont2;
+		}
+	cont++;
+	}
+};
+charFreq(cadena);
 
 
 
