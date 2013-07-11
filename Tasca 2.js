@@ -158,30 +158,34 @@ console.log(filterLongWords(array,len));
 
 var cadena = "Hola que tal";
 var charFreq = function (cadena){
-	var cad2 = cadena;
-	var cont=0;
-	//Contador de les vegades que apareix una lletra
-	var cont2=0;
+	// realment no cal duplicar la cadena si no hi fas cap processat
+  //var cad2 = cadena;
+	var charPos = 0;
+	// El contador és el propi objecte de freqüències
+  //var cont2=0;
 	//Creem l'objecte
-	var llistat = {};
-	while (cont<cad2.length){
-		var c = cad2[cont];
-		cont2=cad2.split(c).length -1;
-		if (c !== " "){
-			console.log("Lletra: "+c+" - "+cont2);
-			//Aqui no se si creo bé l'objecte
-			llistat.c = cont2;
-		}
-	cont++;
+	var llistatFreq = {};
+  // Millor declarar les variables fora del bucle, per eficiència
+  var nextChar;
+	while (charPos < cadena.length) {
+    // Millor utilitzem charAt( )
+		nextChar = cadena.charAt(charPos);
+    // opcionalment pots descartar caràcters que no t'interessin, com ' ', \r, \n...
+   
+		// Et sorprendrà, però no tots els problemes es resolen amb split ;)
+    //cont2 = cad2.split(c).length -1;
+    
+    // No sempre es pot mirar així, 
+    // però a nosaltres ens val perquè sempre hi posem ints > 0
+    // Has mirat allò de "truthy" i "falsy" ? No definit o 0 és falsy en aquest cas.
+    if (!llistatFreq[nextChar]) {
+      llistatFreq[nextChar] = 1;
+    } else {
+      llistatFreq[nextChar] += 1; 
+    }
+    charPos++;
 	}
+  console.log("9. objecte de freqüències:");
+  console.log(llistatFreq);
 };
 charFreq(cadena);
-
-
-
-
-
-
-
-
-
